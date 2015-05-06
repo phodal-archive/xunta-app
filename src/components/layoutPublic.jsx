@@ -1,6 +1,6 @@
 /** @jsx React.DOM */
 var React = require('react');
-var __ = require('../flux/stores/lang')._
+var __ = require('../flux/stores/lang')._;
 
 var UI = require('react-topui');
 var SubNav = require('./subNav');
@@ -10,7 +10,7 @@ module.exports = React.createClass({
 		{label: __('Home'), url: '#'},
 		{label: __('Login'), url: '#login'},
 		{label: __('Signup'), url: '#signup'}
-		]
+		];
 		return ( 
 			<div>
 				<UI.NavBar>

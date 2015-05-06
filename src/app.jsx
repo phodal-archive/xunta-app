@@ -154,9 +154,6 @@ module.exports = React.createClass({
 			routeParams: this.state.routeParams
 		});
 
-		if( !this.state.isAuth ){
-			return <LayoutPublic>{page}</LayoutPublic>
-		}
 		return (<LayoutUser back={this.handleBackButton}>{page}</LayoutUser>);
 	},
 
