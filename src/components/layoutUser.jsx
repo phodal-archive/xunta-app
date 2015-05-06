@@ -33,10 +33,16 @@ module.exports = React.createClass({
                   <a href="#dashboard">{__('nav.home')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#settings">{__('nav.settings')}</a>
+                  <a href="#blog">{__('nav.blog')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#logout">{__('nav.logout')}</a>
+                  <a href="#juba">{__('nav.juba')}</a>
+                </UI.ListItem>
+                <UI.ListItem>
+                  <a href="#link">{__('nav.link')}</a>
+                </UI.ListItem>
+                <UI.ListItem>
+                  <a href="#settings">{__('nav.settings')}</a>
                 </UI.ListItem>
               </UI.ListContainer>
             </UI.List>
