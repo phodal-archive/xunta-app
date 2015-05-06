@@ -53,4 +53,4 @@ var RouterActions = require('../flux/actions/router');
  		return false;
  	}
 
- }
+ };
