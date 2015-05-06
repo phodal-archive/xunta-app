@@ -1,4 +1,4 @@
-  /** @jsx React.DOM */
+/** @jsx React.DOM */
 
 var React = require('react');
 var IScroll = require('../../components/iscroll');
@@ -9,12 +9,31 @@ var AppStateActions = require('../../flux/actions/appState');
 
 module.exports = React.createClass({
 
+  getInitialState: function() {
+    return {
+      juba: {}
+    };
+  },
+
   getStateFromStores: function(){
 
   },
 
   componentDidMount: function(){
     AppStateActions.setTitle(__('nav.blog'));
+    $.get('http://www.xuntayizhan.com/api/blog_list/', function(date) {
+      var blog_component = [];
+      $.each(date.results, function(index, post){
+        blog_component.push((
+            <UI.ListItem>
+              <a href="#blog/{post.slug}">{post.title}</a>
+            </UI.ListItem>
+        ));
+      });
+      this.setState({
+        blog: blog_component
+      });
+    }.bind(this));
   },
 
   onDataChange: function(field){
@@ -27,11 +46,9 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <IScroll>
-          <h1>Blog</h1>
-        </IScroll>
-      </div>
-      );
+        <UI.ListContainer>
+          {this.state.blog}
+        </UI.ListContainer>
+    );
   }
 });

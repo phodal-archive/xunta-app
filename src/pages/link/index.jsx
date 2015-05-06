@@ -9,12 +9,31 @@ var AppStateActions = require('../../flux/actions/appState');
 
 module.exports = React.createClass({
 
+  getInitialState: function() {
+    return {
+      juba: {}
+    };
+  },
+
   getStateFromStores: function(){
 
   },
 
   componentDidMount: function(){
     AppStateActions.setTitle(__('nav.link'));
+    $.get('http://www.xuntayizhan.com/api/link_list/', function(date) {
+      var link_component = [];
+      $.each(date.results, function(index, post){
+        link_component.push((
+            <UI.ListItem>
+              <a href="#link/{post.slug}">{post.title}</a>
+            </UI.ListItem>
+        ));
+      });
+      this.setState({
+        link: link_component
+      });
+    }.bind(this));
   },
 
   onDataChange: function(field){
@@ -27,11 +46,9 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <IScroll>
-          <h1>Link</h1>
-        </IScroll>
-      </div>
-      );
+        <UI.ListContainer>
+          {this.state.link}
+        </UI.ListContainer>
+    );
   }
 });
