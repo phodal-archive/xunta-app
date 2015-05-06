@@ -82,7 +82,7 @@ gulp.task('concat-css', function(){
 	return gulp.src([
 		'./assets-src/bower/normalize-css/normalize.css',
 		'./assets-src/bower/snapjs/snap.css',
-		'./assets-src/bower/topcoat/css/topcoat-mobile-dark.css',
+		'./assets-src/bower/topcoat/css/topcoat-mobile-light.css',
 		'./assets-src/bower/topcoat-icons/css/icomatic.css',
 		'./build/css/lessed.css'
 		])

@@ -36,11 +36,19 @@ module.exports = React.createClass({
 
   render: function(){
     return (
-        <IScroll>
-          {this.state.blog}
-          {this.state.juba}
-          {this.state.link}
-        </IScroll>
+          <UI.ListContainer>
+            <UI.ListItem>
+              <a href="#1">LINK1</a>
+            </UI.ListItem>
+            <UI.ListItem>
+              <a href="#2">LINK2</a>
+            </UI.ListItem>
+            <UI.ListItem>
+              {this.state.blog}
+              {this.state.juba}
+              {this.state.link}
+            </UI.ListItem>
+          </UI.ListContainer>
     );
   }
 

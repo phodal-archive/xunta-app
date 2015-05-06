@@ -67,12 +67,11 @@ module.exports = React.createClass({
 	handleBackButton: function(){
 		switch( this.state.path ){
 			case '':
-			case 'dashboard':
-				Dialogs.confirm('Exit app?', this.exit)
+				Dialogs.confirm('Exit app?', this.exit);
 			break;
-			case 'login':
-			case 'signup':
-			case 'settings':
+			case 'juba':
+			case 'blog':
+			case 'link':
 			this.router.navigate('/');
 			break;
 			default:
