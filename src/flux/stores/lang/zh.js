@@ -4,5 +4,5 @@ module.exports = {
 	'nav.blog': '读吧',
 	'nav.juba': '聚吧',
 	'nav.link': '荐吧',
-	'nav.settings': 'Settings'
+	'nav.settings': '设置'
 };
