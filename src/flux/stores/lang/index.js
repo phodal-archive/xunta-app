@@ -4,20 +4,15 @@ module.exports = {
 		code: 'en'
 	},
 	{
-		name: 'German',
-		code: 'de'
-	},
-	{
-		name: 'العربية',
-		code: 'ar'
+		name: 'Chinese',
+		code: 'zh'
 	}],
 
-	defaultLocale: 'en',
+	defaultLocale: 'zh',
 	
 	translations: {
 		en: require('./en.js'),
-		de: require('./de.js'),
-		ar: require('./ar.js')
+		zh: require('./zh.js')
 	}
 	
 };

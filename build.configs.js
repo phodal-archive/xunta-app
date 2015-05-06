@@ -18,12 +18,12 @@ module.exports = {
 		phonegapPlugins: [
 			{
 				name: 'org.apache.cordova.core.device',
-				installFrom: 'https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git',
+				installFrom: 'org.apache.cordova.core.device',
 				version: null
 			},
 			{
 				name: 'org.apache.cordova.core.dialogs',
-				installFrom: 'https://git-wip-us.apache.org/repos/asf/cordova-plugin-dialogs',
+				installFrom: 'org.apache.cordova.core.dialogs',
 				version: null
 			},
 			{
@@ -33,7 +33,7 @@ module.exports = {
 			},
 			{
 				name: 'org.apache.cordova.core.vibration',
-				installFrom: 'https://git-wip-us.apache.org/repos/asf/cordova-plugin-vibration.git',
+				installFrom: 'org.apache.cordova.core.vibration',
 				version: null
 			},
 			{
@@ -43,12 +43,12 @@ module.exports = {
 			},
 			{
 				name: 'com.phonegap.plugins.pushplugin',
-				installFrom: 'https://github.com/phonegap-build/PushPlugin.git',
+				installFrom: 'com.phonegap.plugins.pushplugin',
 				version: '2.1.1'
 			},
 			{
 				name: 'org.apache.cordova.core.inappbrowser',
-				installFrom: 'https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git',
+				installFrom: 'org.apache.cordova.core.inappbrowser',
 				version: null
 			},
 			{
