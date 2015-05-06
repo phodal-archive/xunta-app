@@ -1,0 +1,6 @@
+node_modules
+.idea
+build
+phonegap-app
+cordova-app
+assets-src/bower
