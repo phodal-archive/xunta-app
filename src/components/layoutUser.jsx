@@ -30,7 +30,7 @@ module.exports = React.createClass({
               </UI.ListHeader>
               <UI.ListContainer className="nav-list">
                 <UI.ListItem>
-                  <a href="#dashboard">{__('nav.home')}</a>
+                  <a href="#">{__('nav.home')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
                   <a href="#blog">{__('nav.blog')}</a>
