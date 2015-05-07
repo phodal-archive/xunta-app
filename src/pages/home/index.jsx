@@ -30,23 +30,26 @@ module.exports = React.createClass({
       var juba_component = [];
       var link_component = [];
       $.each(blog, function(index, post){
+        post.url = "#blog/" + post.slug;
         blog_component.push((
             <UI.ListItem>
-              <a href="#blog/{post.slug}">{post.title}</a>
+              <a href={post.url}>{post.title}</a>
             </UI.ListItem>
         ));
       });
       $.each(juba, function(index, post){
+        post.url = "#juba/" + post.slug;
         juba_component.push((
             <UI.ListItem>
-              <a href="#blog/{post.slug}">{post.title}</a>
+              <a href={post.url}>{post.title}</a>
             </UI.ListItem>
         ));
       });
       $.each(link, function(index, post){
+        post.url = "#link/" + post.slug;
         link_component.push((
             <UI.ListItem>
-              <a href="#blog/{post.slug}">{post.title}</a>
+              <a href={post.url}>{post.title}</a>
             </UI.ListItem>
         ));
       });
