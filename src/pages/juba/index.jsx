@@ -24,9 +24,10 @@ module.exports = React.createClass({
     $.get('http://www.xuntayizhan.com/api/juba_list/', function(date) {
       var juba_component = [];
       $.each(date.results, function(index, post){
+        post.url = "#juba/" + post.slug;
         juba_component.push((
             <UI.ListItem>
-              <a href="#blog/{post.slug}">{post.title}</a>
+              <a href={post.url}>{post.title}</a>
             </UI.ListItem>
         ));
       });

@@ -24,9 +24,10 @@ module.exports = React.createClass({
     $.get('http://www.xuntayizhan.com/api/link_list/', function(date) {
       var link_component = [];
       $.each(date.results, function(index, post){
+        post.url = "#link/" + post.slug;
         link_component.push((
             <UI.ListItem>
-              <a href="#link/{post.slug}">{post.title}</a>
+              <a href={post.url}>{post.title}</a>
             </UI.ListItem>
         ));
       });
