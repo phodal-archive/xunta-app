@@ -33,7 +33,7 @@ module.exports = React.createClass({
         post.url = "#blog/" + post.slug;
         blog_component.push((
             <UI.ListItem>
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url}>{post.title}</a> <span>{post.user}</span>
             </UI.ListItem>
         ));
       });
@@ -41,7 +41,7 @@ module.exports = React.createClass({
         post.url = "#juba/" + post.slug;
         juba_component.push((
             <UI.ListItem>
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url}>{post.title}</a> <span>{post.user}</span>
             </UI.ListItem>
         ));
       });
@@ -49,7 +49,7 @@ module.exports = React.createClass({
         post.url = "#link/" + post.slug;
         link_component.push((
             <UI.ListItem>
-              <a href={post.url}>{post.title}</a>
+              <a href={post.url}>{post.title}</a> <span>{post.user}</span>
             </UI.ListItem>
         ));
       });
