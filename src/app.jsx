@@ -3,18 +3,15 @@ var $ = require('jquery');
 var React = require('react');
 var FastClick = require('fastclick');
 var LayoutUser = require('./components/layoutUser');
-var LayoutPublic = require('./components/layoutPublic');
 var Dialogs = require('./components/dialogs');
-var Offline = require('./pages/offline');
 
-var UserStore = require('./flux/stores/user');
 var RouterStore = require('./flux/stores/router');
 
 React.initializeTouchEvents(true);
 
 module.exports = React.createClass({
 
-	mixins: [ UserStore.mixin(), RouterStore.mixin() ],
+	mixins: [ RouterStore.mixin() ],
 	
 	router: require('./util/router'),
 
@@ -25,8 +22,6 @@ module.exports = React.createClass({
 			path: RouterStore.get('path'),
 			routeParams: RouterStore.get('routeParams'),
 			page: RouterStore.get('page'),
-			user: UserStore.getData(),
-			isAuth: UserStore.isAuth()
 		};
 	},
 	
@@ -145,22 +140,11 @@ module.exports = React.createClass({
 		if( !this.state.page ){
 			return <div>loading...</div>;
 		}
-		if( this.state.offline ){
-			return this.renderWhenOffline();
-		}
 
 		var page = new this.state.page({
 			routeParams: this.state.routeParams
 		});
 
 		return (<LayoutUser back={this.handleBackButton}>{page}</LayoutUser>);
-	},
-
-	renderWhenOffline: function(){
-		var offlinePage = new Offline({
-			user: this.state.user
-		});
-		return (<LayoutPublic>{offlinePage}</LayoutPublic>);
 	}
-
 });
