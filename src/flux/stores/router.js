@@ -14,7 +14,6 @@ var Store = ReactFlux.createStore({
 }, [
 	
 	[constants.SET_PATH_SUCCESS, function(payload){
-
 		this.setState({
 			path: payload.path,
 			page: payload.page,
