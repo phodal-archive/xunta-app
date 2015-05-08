@@ -21,7 +21,7 @@ module.exports = React.createClass({
 		return {
 			path: RouterStore.get('path'),
 			routeParams: RouterStore.get('routeParams'),
-			page: RouterStore.get('page'),
+			page: RouterStore.get('page')
 		};
 	},
 	
