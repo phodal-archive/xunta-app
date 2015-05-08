@@ -30,7 +30,6 @@ module.exports = React.createClass({
   render: function() {
     return (
         <div>
-          <h1>{this.state.blog.title}</h1>
           <p>
             <div dangerouslySetInnerHTML={{__html: this.state.blog.content }} />
           </p>
