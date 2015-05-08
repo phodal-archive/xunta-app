@@ -9,26 +9,32 @@ var AppStateActions = require('../../flux/actions/appState');
 
 module.exports = React.createClass({
 
-  getStateFromStores: function(){
-
+  getInitialState: function() {
+    return {
+      blog: {}
+    };
   },
+
 
   componentDidMount: function(){
     AppStateActions.setTitle('Blog Detail');
-  },
-
-  onDataChange: function(field){
-
-  },
-
-  save: function(){
-
+    $.get('http://www.xuntayizhan.com/api/blog_detail/?search=' + this.props.routeParams.get("slug"), function(data) {
+      var blog = data.results[0];
+      AppStateActions.setTitle(blog.title);
+      this.setState({
+        blog: blog
+      });
+    }.bind(this));
   },
 
   render: function() {
-    console.log(this.state);
     return (
-        <h1>Blog Detail</h1>
+        <div>
+          <h1>{this.state.blog.title}</h1>
+          <p>
+            <div dangerouslySetInnerHTML={{__html: this.state.blog.content }} />
+          </p>
+        </div>
     );
   }
 });
