@@ -24,7 +24,7 @@ module.exports = React.createClass({
     $.get('http://www.xuntayizhan.com/api/blog_list/', function(date) {
       var blog_component = [];
       $.each(date.results, function(index, post){
-        post.url = "#juba/" + post.slug;
+        post.url = "#blog/" + post.slug;
         blog_component.push((
             <UI.ListItem>
               <a href={post.url}>{post.title}</a>

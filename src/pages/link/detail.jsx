@@ -11,18 +11,18 @@ module.exports = React.createClass({
 
   getInitialState: function() {
     return {
-      blog: {}
+      link: {}
     };
   },
 
 
   componentDidMount: function(){
-    AppStateActions.setTitle('读吧');
-    $.get('http://www.xuntayizhan.com/api/blog_detail/?search=' + this.props.routeParams.get("slug"), function(data) {
-      var blog = data.results[0];
-      AppStateActions.setTitle(blog.title);
+    AppStateActions.setTitle('荐吧');
+    $.get('http://www.xuntayizhan.com/api/link_detail/?search=' + this.props.routeParams.get("slug"), function(data) {
+      var link = data.results[0];
+      AppStateActions.setTitle(link.title);
       this.setState({
-        blog: blog
+        link: link
       });
     }.bind(this));
   },
@@ -31,7 +31,7 @@ module.exports = React.createClass({
     return (
         <div>
           <p>
-            <div dangerouslySetInnerHTML={{__html: this.state.blog.content }} />
+            <div dangerouslySetInnerHTML={{__html: this.state.link.description }} />
           </p>
         </div>
     );
