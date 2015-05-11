@@ -63,11 +63,32 @@ module.exports = React.createClass({
 
   render: function(){
     return (
-          <UI.ListContainer>
-            {this.state.blog}
-            {this.state.juba}
-            {this.state.link}
-          </UI.ListContainer>
+        <div>
+          <UI.List>
+            <UI.ListHeader>
+              读吧
+            </UI.ListHeader>
+            <UI.ListContainer>
+              {this.state.blog}
+            </UI.ListContainer>
+          </UI.List>
+          <UI.List>
+            <UI.ListHeader>
+              聚吧
+            </UI.ListHeader>
+            <UI.ListContainer>
+              {this.state.juba}
+            </UI.ListContainer>
+          </UI.List>
+          <UI.List>
+            <UI.ListHeader>
+              荐吧
+            </UI.ListHeader>
+            <UI.ListContainer>
+              {this.state.link}
+            </UI.ListContainer>
+          </UI.List>
+        </div>
     );
   }
 
