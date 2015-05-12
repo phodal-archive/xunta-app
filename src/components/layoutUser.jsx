@@ -30,19 +30,19 @@ module.exports = React.createClass({
               </UI.ListHeader>
               <UI.ListContainer className="nav-list">
                 <UI.ListItem>
-                  <a href="#">{__('nav.home')}</a>
+                  <a href="#"><UI.Icon name="home" className="nav-bar-icon" />{__('nav.home')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#blog">{__('nav.blog')}</a>
+                  <a href="#blog"><UI.Icon name="text" className="nav-bar-icon" />{__('nav.blog')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#juba">{__('nav.juba')}</a>
+                  <a href="#juba"><UI.Icon name="user" className="nav-bar-icon" />{__('nav.juba')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#link">{__('nav.link')}</a>
+                  <a href="#link"><UI.Icon name="share" className="nav-bar-icon" />{__('nav.link')}</a>
                 </UI.ListItem>
                 <UI.ListItem>
-                  <a href="#settings">{__('nav.settings')}</a>
+                  <a href="#settings"><UI.Icon name="settings" className="nav-bar-icon" />{__('nav.settings')}</a>
                 </UI.ListItem>
               </UI.ListContainer>
             </UI.List>
