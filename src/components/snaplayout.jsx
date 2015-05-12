@@ -23,7 +23,7 @@ module.exports.Drawers = React.createClass({
       return 'Drawers'
     }
   },
-  
+
   render: function(){
     return (
       <div className="snap-drawers">
@@ -64,7 +64,7 @@ module.exports.Right = React.createClass({
 });
 
 module.exports.Toggler = React.createClass({
-  
+
   propTypes: {
     side: React.PropTypes.oneOf(['left', 'right']).isRequired
   },
@@ -110,6 +110,8 @@ module.exports.Content = React.createClass({
      element: this.refs.content.getDOMNode(),
      flickThreshold: 50,
      disable: 'right',
+     maxPosition: 200,
+     minPosition: -200,
      easing: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)',
    });
   },
